@@ -7,10 +7,10 @@ Plane will be used to either:
 - Define boundaries in the context of binary classification for linearly sperable clusters.
 - Predict continious values for regression where data is homoscedastic.
 
-The visualization for the classification problem is:
+The visualization for a perceptron is:
 
 <p align="center">
-<img src="imgs/perceptron_akshay_chandra.png" alt="drawing" width="200", class="center"/>
+<img src="imgs/perceptron_akshay_chandra.png" alt="drawing" width="450", class="center"/>
 <figcaption align = "center"><b>Fig.1 - Perceptron [1] </b></figcaption>
 </figure>
 </p>
@@ -18,40 +18,47 @@ The visualization for the classification problem is:
 ## Quick Maths 
 
 <div>
-  <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?y&space;=&space;\begin{cases}0&space;&&space;\text{&space;if&space;}b&plus;\sum_{i}^{}&space;w_{i}x_{i}&space;>&space;0&space;\\1&space;&&space;\text{&space;if&space;}b&plus;\sum_{i}^{}&space;w_{i}x_{i}&space;\leq&space;0\end{cases}" title="https://latex.codecogs.com/svg.image?y = \begin{cases}0 & \text{ if }b+\sum_{i}^{} w_{i}x_{i} > 0 \\1 & \text{ if }b+\sum_{i}^{} w_{i}x_{i} \leq 0\end{cases}">
- <span style='margin-right:1.25em; display:inline-block;'>&emsp; (1)</span>
+  <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?y&space;=&space;\begin{cases}0&space;&&space;\text{&space;if&space;}b&plus;\sum_{i}^{}&space;w_{i}x_{i}&space;>&space;0&space;\\1&space;&&space;\text{&space;if&space;}b&plus;\sum_{i}^{}&space;w_{i}x_{i}&space;\leq&space;0\end{cases}">
+ <span style='margin-right:1.25em; display:inline-block;'>&emsp; (Equation 1)</span>
 </div>
 
+<br />
 
 The equation of the seperating plane itself is: 
 <div>
   <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?b&space;&plus;\sum_{i}^{}&space;w_{i}x_{i}&space;=&space;0" title="https://latex.codecogs.com/svg.image?b +\sum_{i}^{} w_{i}x_{i} = 0">
- <span style='margin-right:1.25em; display:inline-block;'>&emsp; (2)</span>
+ <span style='margin-right:1.25em; display:inline-block;'>&emsp; (Equation 2)</span>
 </div>
+
+<br />
+
 
 The equation can also be written as : 
 <div>
   <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?\textbf{w}&space;\cdot&space;\textbf{x}&space;&plus;&space;b&space;=&space;0" >
- <span style='margin-right:1.25em; display:inline-block;'>&emsp; (3)</span>
+ <span style='margin-right:1.25em; display:inline-block;'>&emsp; (Equation 3)</span>
 </div>
 
-It simply performs a dot product betewen the inputs and the weights
+<br />
+
+It simply performs a dot product betewen the inputs and the weights:
 
 <div>
-  <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?\begin{bmatrix}w_{0}&space;&&space;w_{1}&space;&&space;...&space;&&space;w_{i}\\\end{bmatrix}&space;\cdot&space;\begin{bmatrix}&space;x_{0}&space;\\&space;x_{1}&space;\\&space;...&space;\\&space;x_{i}&space;\end{bmatrix}&plus;&space;\begin{bmatrix}&space;b_{0}&space;\\&space;b_{1}&space;\\&space;...&space;\\&space;b_{i}&space;\end{bmatrix}=&space;\begin{bmatrix}&space;y&space;\end{bmatrix}&space;" >
- <span style='margin-right:1.25em; display:inline-block;'>&emsp; (4)</span>
+  <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?\begin{bmatrix}w_{00}&space;&&space;w_{10}&space;&&space;w_{20}&space;&&space;...&space;&&space;w_{ij}\\\end{bmatrix}&space;\cdot&space;\begin{bmatrix}&space;x_{0}&space;\\&space;x_{1}&space;\\x_{2}&space;\\&space;...&space;\\&space;x_{j}&space;\end{bmatrix}&plus;&space;\begin{bmatrix}&space;b_{0}&space;\\&space;b_{1}&space;\\&space;b_{2}&space;\\...&space;\\&space;b_{j}&space;\end{bmatrix}=&space;\begin{bmatrix}&space;y_{j}&space;\end{bmatrix}&space;" >
+ <span style='margin-right:1.25em; display:inline-block;'>&emsp; (Equation 4)</span>
 </div>
 
-#TODO
-The normal to the plane is `(w1,w2,w3...)`. The analytical breakdown of why this is true will be found [here](). This will strengthen the intuition behind the classification problem. 
+The normal to the plane is `(w1,w2,w3...)`. The analytical breakdown of why this is true will be found [here](). This will strengthen the intuition behind the classification problem.  #TODO
 
 Key Features:
-- Does not have an activation function. 
+- Does not have an activation function.
+- Every input has a corresponding weight.
+- Every perceptron has a corresponding bias.
 
 ```
 So what happens when the number of inputs increase? 
 ```
-The dimensions increases, however the output remains **single**!
+The **dimensions increases**, however the output remains **single**!
 
 
 
@@ -73,9 +80,11 @@ Important to note that **the solutions are the same**, both problems produce eit
 
 <p align="center">
 <img src="imgs/wellesley_cs305_lectures_4_Perceptrons.png" alt="drawing" width="400", class="center"/>
-<figcaption align = "center"><b>Fig.2 - Classification [1] </b></figcaption>
+<figcaption align = "center"><b>Fig.2 - Dimensional Increase: Classification </b></figcaption>
 </figure>
 </p>
+
+<br />
 
 Source: [wellesley.edu/~cs305/lectures/4_Perceptrons](http://cs.wellesley.edu/~cs305/lectures/4_Perceptrons.pdf)
 
@@ -86,9 +95,11 @@ Source: [wellesley.edu/~cs305/lectures/4_Perceptrons](http://cs.wellesley.edu/~c
 - As the number of inputs increases (dimensions increase), the equation 2 expands out to show that the equation for a [mutliple linear regression](https://aegis4048.github.io/mutiple_linear_regression_and_visualization_in_python).
 - Fits best for [homoscedastic and not heteroscedastic](https://timeseriesreasoning.com/contents/heteroscedasticity/) data. 
 
+<br />
+
 <p align="center">
 <img src="imgs\linear_regression_dimensions_kenndanielso.png" alt="drawing" width="400", class="center"/>
-<figcaption align = "center"><b>Fig.3 - Regression [1] </b></figcaption>
+<figcaption align = "center"><b>Fig.3 - Dimensional Increase: Regression </b></figcaption>
 </figure>
 </p>
 
@@ -136,31 +147,55 @@ Planes will be used to:
 - Define boundaries in the context of multi-class classification for linearly seperable clusters**. 
 
 Key Features: 
-- Each perceptron produces an equation for the seperating plane. With two planes, the Neural Network can classify 4 clusters. 
+- Each perceptron produces an equation for the seperating plane. With two planes, the Neural Network can classify 4 clusters and requires 2 perceptrons. 
+- Each additional perceptron will have it's own bias.
 
 
 
 The visualization for the classification problem is:
 
 <p align="center">
-<img src="imgs\multiple_class_regression_jermwatt.png" alt="https://github.com/jermwatt/machine_learning_refined" width="200", class="center"/>
-<figcaption align = "center"><b>Fig.5 - Multiple Class Perceptron Problem [1] </b></figcaption>
+<img src="imgs\multiple_class_regression_jermwatt.png" alt="https://github.com/jermwatt/machine_learning_refined" width="400", class="center"/>
+<figcaption align = "center"><b>Fig.4 - Multiple Class Perceptron Problem  </b></figcaption>
 </figure>
 </p>
+
+Source: [jermwatt.github.io/machine_learning_refined/notes/7_Linear_multiclass_classification/7_3_Perceptron.html](https://jermwatt.github.io/machine_learning_refined/notes/7_Linear_multiclass_classification/7_3_Perceptron.html)
+
+The matrix math of Equation 4 can be expanded to accomodate the additional perceptrons, and therefore additional outputs. 
+
+<div>
+  <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?\begin{bmatrix}w_{00}&space;&&space;w_{01}&space;&&space;w_{02}&space;&&space;...&space;&&space;w_{0j}&space;\\w_{10}&space;&&space;w_{11}&space;&&space;w_{12}&space;&&space;...&space;&&space;w_{1j}&space;\\w_{20}&space;&&space;w_{21}&space;&&space;w_{22}&space;&&space;...&space;&&space;w_{2j}&space;\\...&space;&&space;...&space;&&space;...&space;&&space;...&space;&&space;...&space;\\w_{i0}&space;&&space;w_{i1}&space;&&space;w_{i2}&space;&&space;...&space;&&space;w_{ij}\\&space;\end{bmatrix}&space;\cdot&space;\begin{bmatrix}&space;x_{0}&space;\\&space;x_{1}&space;\\&space;x_{2}&space;\\&space;...&space;\\&space;x_{j}&space;\end{bmatrix}&space;&plus;\begin{bmatrix}&space;b_{0}&space;\\&space;b_{1}&space;\\&space;b_{2}&space;\\&space;...&space;\\&space;b_{j}&space;\end{bmatrix}&space;=\begin{bmatrix}&space;y_{0}&space;\\&space;y_{1}&space;\\&space;y_{2}&space;\\&space;...&space;\\&space;y_{j}&space;\end{bmatrix}&space;" >
+ <span style='margin-right:1.25em; display:inline-block;'>&emsp; (4)</span>
+</div>
+
+<br />
+
+Here's a quick refresher on linear algrebra math: 
+
+<p align="center">
+<img src="imgs\matrix_dot_product_algebra_1_course.jpg" alt="https://github.com/jermwatt/machine_learning_refined" width="250", class="center"/>
+<figcaption align = "center"><b>Fig.5 - Linear Algebra [1] </b></figcaption>
+</figure>
+</p>
+
+Source: [algebra1course.wordpress.com/2013/02/19/3-matrix-operations-dot-products-and-inverses/](https://algebra1course.wordpress.com/2013/02/19/3-matrix-operations-dot-products-and-inverses/)
+
+<br />
 
 <div>
   <img style="vertical-align:middle" src="https://latex.codecogs.com/svg.image?\begin{bmatrix}&space;(0,0)&space;\mapsto&space;Cluster&space;1&space;\\&space;(0,1)&space;\mapsto&space;Cluster&space;2&space;\\&space;(1,0)&space;\mapsto&space;Cluster&space;3&space;\\&space;(1,1)&space;\mapsto&space;Cluster&space;4&space;\\&space;...\end{bmatrix}&space;" >
  <span style='margin-right:1.25em; display:inline-block;'>&emsp; (4)</span>
 </div>
 
+<br />
 
 
-
-Nomenclature: 
+### Nomenclature: 
 
 **w<sub>(*i*)(*j*)</sub>**  or  **w<sub>(*to*)(*from*)**</sub>
 
-Where __*i*__ is the index of the destination neuron and __*j*__ is the index of the sorce neuron.  
+Where __*i*__ is the index of the destination neuron and __*j*__ is the index of the source.  
 
 ```
 Can't I just force combinations of the output to change y according to the cluster, thereby allowing curved boundary clusters? 
