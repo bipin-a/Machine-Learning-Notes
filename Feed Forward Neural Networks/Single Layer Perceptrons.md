@@ -11,9 +11,15 @@ The visualization for a perceptron is:
 
 <p align="center">
 <img src="imgs/perceptron_akshay_chandra.png" alt="drawing" width="450", class="center"/>
-<figcaption align = "center"><b>Fig.1 - Perceptron [1] </b></figcaption>
+    <br>
+    <em>Fig.1 - Single Perceptron.</em>
+    
 </figure>
 </p>
+
+Source: [Akshay L Chandra https://towardsdatascience.com/perceptron-the-artificial-neuron-4d8c70d5cc8d](https://towardsdatascience.com/perceptron-the-artificial-neuron-4d8c70d5cc8d)
+
+<br />
 
 ## Quick Maths 
 
@@ -48,6 +54,8 @@ It simply performs a dot product betewen the inputs and the weights:
  <span style='margin-right:1.25em; display:inline-block;'>&emsp; (Equation 4)</span>
 </div>
 
+<br />
+
 The normal to the plane is `(w1,w2,w3...)`. The analytical breakdown of why this is true will be found [here](). This will strengthen the intuition behind the classification problem.  #TODO
 
 Key Features:
@@ -80,7 +88,8 @@ Important to note that **the solutions are the same**, both problems produce eit
 
 <p align="center">
 <img src="imgs/wellesley_cs305_lectures_4_Perceptrons.png" alt="drawing" width="400", class="center"/>
-<figcaption align = "center"><b>Fig.2 - Dimensional Increase: Classification </b></figcaption>
+    <br>
+    <em>Fig.2 - Dimensional Increase: Classification</em>
 </figure>
 </p>
 
@@ -99,7 +108,8 @@ Source: [wellesley.edu/~cs305/lectures/4_Perceptrons](http://cs.wellesley.edu/~c
 
 <p align="center">
 <img src="imgs\linear_regression_dimensions_kenndanielso.png" alt="drawing" width="400", class="center"/>
-<figcaption align = "center"><b>Fig.3 - Dimensional Increase: Regression </b></figcaption>
+    <br>
+    <em>Fig.3 - Dimensional Increase: Regression</em>
 </figure>
 </p>
 
@@ -138,7 +148,7 @@ Proof [here]() #TODO
 Should the threshold value vary depending on the problem? 
 ```
 
-# Single Layer Multi-Neuron Perceptron
+# Single Layer Multi Perceptron
 
 ## Summary:
 Purpose: 
@@ -146,22 +156,19 @@ Produce **mutliple** planes in `n-1` dimensional subpace within a R<sup>n</sup> 
 Planes will be used to:
 - Define boundaries in the context of multi-class classification for linearly seperable clusters**. 
 
-Key Features: 
-- Each perceptron produces an equation for the seperating plane. With two planes, the Neural Network can classify 4 clusters and requires 2 perceptrons. 
-- Each additional perceptron will have it's own bias.
-
-
-
-The visualization for the classification problem is:
+The visualization for a perceptron is:
 
 <p align="center">
-<img src="imgs\multiple_class_regression_jermwatt.png" alt="https://github.com/jermwatt/machine_learning_refined" width="400", class="center"/>
-<figcaption align = "center"><b>Fig.4 - Multiple Class Perceptron Problem  </b></figcaption>
+<img src="imgs\Single_layer_neural_network_asquero.png" alt="drawing" width="450", class="center"/>
+    <br>
+    <em>Fig.4 - Multiple Perceptron Single Layer.</em>
 </figure>
 </p>
 
-Source: [jermwatt.github.io/machine_learning_refined/notes/7_Linear_multiclass_classification/7_3_Perceptron.html](https://jermwatt.github.io/machine_learning_refined/notes/7_Linear_multiclass_classification/7_3_Perceptron.html)
+<br />
 
+
+## Quick Maths:
 The matrix math of Equation 4 can be expanded to accomodate the additional perceptrons, and therefore additional outputs. 
 
 <div>
@@ -175,7 +182,8 @@ Here's a quick refresher on linear algrebra math:
 
 <p align="center">
 <img src="imgs\matrix_dot_product_algebra_1_course.jpg" alt="https://github.com/jermwatt/machine_learning_refined" width="250", class="center"/>
-<figcaption align = "center"><b>Fig.5 - Linear Algebra [1] </b></figcaption>
+    <br>
+    <em>Fig.5 - Linear Alegbra Reminder.</em>
 </figure>
 </p>
 
@@ -196,6 +204,26 @@ Source: [algebra1course.wordpress.com/2013/02/19/3-matrix-operations-dot-product
 **w<sub>(*i*)(*j*)</sub>**  or  **w<sub>(*to*)(*from*)**</sub>
 
 Where __*i*__ is the index of the destination neuron and __*j*__ is the index of the source.  
+
+
+Key Features: 
+- Each perceptron produces an equation for the seperating plane. With two planes, the Neural Network can classify 4 clusters and requires 2 perceptrons. 
+- Each additional perceptron will have it's own bias.
+
+
+###  Classification Problem:
+
+The visualization for the classification problem is:
+
+<p align="center">
+<img src="imgs\multiple_class_regression_jermwatt.png" alt="https://github.com/jermwatt/machine_learning_refined" width="400", class="center"/>
+    <br>
+    <em>Fig.6 - Multiple Perceptron Classification Problem</em>
+</figure>
+</p>
+
+Source: [jermwatt.github.io/machine_learning_refined/notes/7_Linear_multiclass_classification/7_3_Perceptron.html](https://jermwatt.github.io/machine_learning_refined/notes/7_Linear_multiclass_classification/7_3_Perceptron.html)
+
 
 ```
 Can't I just force combinations of the output to change y according to the cluster, thereby allowing curved boundary clusters? 
